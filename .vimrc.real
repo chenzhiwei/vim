@@ -107,9 +107,6 @@ cnoremap <C-k> <Nop>
 "Open/Close NERDTree
 nmap <F7> :NERDTreeToggle<CR>
 
-"C/C++ open/close TagbarToggle
-nmap <F8> :TagbarToggle<CR>
-
 "when pasting from system clipboard, F2 to toggle paste mode
 set pastetoggle=<F2>
 

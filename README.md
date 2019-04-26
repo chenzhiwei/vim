@@ -4,7 +4,7 @@
 
 ```
 cd ~
-git clone https://github.com/chenzhiwei/vim .vim
+git clone --recurse-submodules https://github.com/chenzhiwei/vim .vim
 ln -sf .vim/vimrc .vimrc
 ```
 
