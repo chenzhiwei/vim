@@ -1,0 +1,18 @@
+[submodule "pack/bundle/start/nerdtree"]
+	path = pack/bundle/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "pack/bundle/start/vim-bracketed-paste"]
+	path = pack/bundle/start/vim-bracketed-paste
+	url = https://github.com/ConradIrwin/vim-bracketed-paste
+[submodule "pack/bundle/start/vim-markdown"]
+	path = pack/bundle/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule "pack/bundle/start/vim-airline"]
+	path = pack/bundle/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "pack/bundle/opt/vim-pathogen"]
+	path = pack/bundle/opt/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "pack/bundle/start/vim-go"]
+	path = pack/bundle/start/vim-go
+	url = https://github.com/fatih/vim-go
