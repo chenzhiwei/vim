@@ -106,10 +106,11 @@ cnoremap <C-d> <Del>
 cnoremap <C-k> <Nop>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
-inoremap <C-k> <Nop>
 
 "when pasting from system clipboard, F2 to toggle paste mode
 set pastetoggle=<F2>
