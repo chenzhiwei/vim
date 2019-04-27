@@ -8,6 +8,13 @@ git clone --recurse-submodules https://github.com/chenzhiwei/vim .vim
 ln -sf .vim/vimrc .vimrc
 ```
 
+## Requirement
+
+```
+apt install -y python3-pip python3-wheel python3-setuptools --no-install-recommends
+pip3 install --upgrade pynvim
+```
+
 ## Commands
 
 * Ctr + o Jump to previous visited locations
