@@ -1,27 +1,3 @@
-[submodule "pack/bundle/start/nerdtree"]
-	path = pack/bundle/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree
-[submodule "pack/bundle/start/vim-bracketed-paste"]
-	path = pack/bundle/start/vim-bracketed-paste
-	url = https://github.com/ConradIrwin/vim-bracketed-paste
-[submodule "pack/bundle/start/vim-markdown"]
-	path = pack/bundle/start/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
-[submodule "pack/bundle/start/vim-airline"]
-	path = pack/bundle/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "pack/bundle/opt/vim-pathogen"]
-	path = pack/bundle/opt/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
-[submodule "pack/bundle/start/vim-go"]
-	path = pack/bundle/start/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule "pack/bundle/start/deoplete"]
-	path = pack/bundle/start/deoplete
-	url = https://github.com/Shougo/deoplete.nvim
-[submodule "pack/bundle/start/nvim-yarp"]
-	path = pack/bundle/start/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp
-[submodule "pack/bundle/start/vim-hug-neovim-rpc"]
-	path = pack/bundle/start/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "bundle/vim-plug"]
+	path = bundle/vim-plug
+	url = https://github.com/junegunn/vim-plug

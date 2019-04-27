@@ -1,11 +1,19 @@
 # The Vim Configuration
 
+## Install NeoVIM
+
+```
+brew install neovim
+
+add-apt-repository ppa:neovim-ppa/stable
+apt update && apt -y install neovim
+```
+
 ## Setup
 
 ```
-cd ~
-git clone --recurse-submodules https://github.com/chenzhiwei/vim .vim
-ln -sf .vim/vimrc .vimrc
+git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
+~/.vim/setup.sh
 ```
 
 ## Requirement
@@ -29,10 +37,24 @@ pip3 install --upgrade pynvim
 * `:tp` switch to previous defination/declaration.
 * `g]` switch between multiple tags.
 
+## Extra vim commands
+
+```
+:PlugInstall
+:GoInstallBinaries
+```
+
 ## Settings
 
 * `:windo set wrap` Wrap lines in vimdiff window
 
+## Debug VIM
+
+Following will generate a `myVim.log` with debug level 9.
+
+```
+vim -V9myVim.log filename
+```
 
 ## More
 

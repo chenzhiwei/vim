@@ -92,7 +92,7 @@ map q <Nop>
 nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 "Map :Q to :q, :W to :w
-cnoreabbrev Q <C-r>=(getcmdtype()==':'? 'q' : 'Q')<CR>
+cnoreabbrev Q <C-r>=(getcmdtype()==':'? 'q!' : 'Q')<CR>
 cnoreabbrev W <C-r>=(getcmdtype()==':'? 'w' : 'W')<CR>
 cnoreabbrev Wq <C-r>=(getcmdtype()==':'? 'wq' : 'Wq')<CR>
 cnoreabbrev WQ <C-r>=(getcmdtype()==':'? 'wq' : 'WQ')<CR>
@@ -110,12 +110,6 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
 inoremap <C-k> <Nop>
-
-"Open/Close NERDTree
-nmap <F7> :NERDTreeToggle<CR>
-
-"Map caps to esc in insert mode
-inoremap <caps> <esc>
 
 "when pasting from system clipboard, F2 to toggle paste mode
 set pastetoggle=<F2>
@@ -148,16 +142,28 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 "Use bash syntax highlight
 let g:is_bash = 1
 
-"vim-markdown plugin
-let g:vim_markdown_folding_disabled = 1
-
-"pathogen plugin
-if !has("packages")
-  runtime pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
-  execute pathogen#infect("pack/bundle/start/{}")
-  execute pathogen#helptags()
-endif
+"vim-plug setting
+call plug#begin('~/.vim/.bundle')
+    if has('nvim')
+      Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+    else
+      Plug 'Shougo/deoplete.nvim'
+      Plug 'roxma/nvim-yarp'
+      Plug 'roxma/vim-hug-neovim-rpc'
+    endif
+    Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+    Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoUpdateBinaries'}
+    Plug 'ConradIrwin/vim-bracketed-paste'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'vim-airline/vim-airline'
+call plug#end()
 
 "deoplete plugin
 let g:deoplete#enable_at_startup = 1
 "set completeopt+=menuone "select first menu item
+
+"Open/Close NERDTree
+nmap <F7> :NERDTreeToggle<CR>
+
+"vim-markdown plugin
+let g:vim_markdown_folding_disabled = 1
