@@ -140,9 +140,21 @@ let g:is_bash = 1
 
 "markdown disable folding
 let g:vim_markdown_folding_disabled = 1
+let g:deoplete#enable_at_startup = 1
 
 if !has("packages")
   runtime pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
   execute pathogen#infect("pack/bundle/start/{}")
   execute pathogen#helptags()
 endif
+
+"auto-omni setting
+inoremap <C-b> <C-x><C-o>
+"function! OpenCompletion()
+"    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z') || (v:char == '.'))
+"        call feedkeys("\<C-x>\<C-o>", "n")
+"    endif
+"endfunction
+"
+"autocmd InsertCharPre * call OpenCompletion()
+"set completeopt+=menuone,noinsert

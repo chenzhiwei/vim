@@ -16,3 +16,12 @@
 [submodule "pack/bundle/start/vim-go"]
 	path = pack/bundle/start/vim-go
 	url = https://github.com/fatih/vim-go
+[submodule "pack/bundle/start/deoplete"]
+	path = pack/bundle/start/deoplete
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "pack/bundle/start/nvim-yarp"]
+	path = pack/bundle/start/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
+[submodule "pack/bundle/start/vim-hug-neovim-rpc"]
+	path = pack/bundle/start/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
