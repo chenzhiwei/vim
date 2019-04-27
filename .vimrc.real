@@ -97,15 +97,25 @@ cnoreabbrev W <C-r>=(getcmdtype()==':'? 'w' : 'W')<CR>
 cnoreabbrev Wq <C-r>=(getcmdtype()==':'? 'wq' : 'Wq')<CR>
 cnoreabbrev WQ <C-r>=(getcmdtype()==':'? 'wq' : 'WQ')<CR>
 
-"Map VIM command mode shortcut to bash shortcut
+"Map VIM command/insert mode shortcut to bash shortcut
 cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-d> <Del>
 cnoremap <C-k> <Nop>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-d> <Del>
+inoremap <C-k> <Nop>
 
 "Open/Close NERDTree
 nmap <F7> :NERDTreeToggle<CR>
+
+"Map caps to esc in insert mode
+inoremap <caps> <esc>
 
 "when pasting from system clipboard, F2 to toggle paste mode
 set pastetoggle=<F2>
@@ -138,23 +148,16 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 "Use bash syntax highlight
 let g:is_bash = 1
 
-"markdown disable folding
+"vim-markdown plugin
 let g:vim_markdown_folding_disabled = 1
-let g:deoplete#enable_at_startup = 1
 
+"pathogen plugin
 if !has("packages")
   runtime pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
   execute pathogen#infect("pack/bundle/start/{}")
   execute pathogen#helptags()
 endif
 
-"auto-omni setting
-inoremap <C-b> <C-x><C-o>
-"function! OpenCompletion()
-"    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z') || (v:char == '.'))
-"        call feedkeys("\<C-x>\<C-o>", "n")
-"    endif
-"endfunction
-"
-"autocmd InsertCharPre * call OpenCompletion()
-"set completeopt+=menuone,noinsert
+"deoplete plugin
+let g:deoplete#enable_at_startup = 1
+"set completeopt+=menuone "select first menu item
