@@ -31,7 +31,7 @@ if [[ -f $HOME/.bashrc ]] && ! grep -wq .vim/.bashrc $HOME/.bashrc; then
 fi
 
 if [[ -f $HOME/.bash_profile ]] && ! grep -wq .vim/.bashrc $HOME/.bash_profile; then
-    echo '$HOME/.vim/.bashrc' >> $HOME/..bash_profile
+    echo '$HOME/.vim/.bashrc' >> $HOME/.bash_profile
 fi
 
 rm -f /usr/bin/vimdiff.nvim
