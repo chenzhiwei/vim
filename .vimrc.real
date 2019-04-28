@@ -163,7 +163,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('on_insert_enter', v:false)
 "select first menu item
-set completeopt+=menuone,noinsert
+"set completeopt+=menuone,noinsert
 
 "Open/Close NERDTree
 nmap <F7> :NERDTreeToggle<CR>
