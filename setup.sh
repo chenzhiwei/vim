@@ -27,11 +27,11 @@ ln -sf $NVIM vim
 ln -sf $NVIM editor
 
 if [[ -f $HOME/.bashrc ]] && ! grep -wq .vim/.bashrc $HOME/.bashrc; then
-    echo '$HOME/.vim/.bashrc' >> $HOME/.bashrc
+    echo '. $HOME/.vim/.bashrc' >> $HOME/.bashrc
 fi
 
 if [[ -f $HOME/.bash_profile ]] && ! grep -wq .vim/.bashrc $HOME/.bash_profile; then
-    echo '$HOME/.vim/.bashrc' >> $HOME/.bash_profile
+    echo '. $HOME/.vim/.bashrc' >> $HOME/.bash_profile
 fi
 
 rm -f /usr/bin/vimdiff.nvim
