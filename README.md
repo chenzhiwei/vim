@@ -14,6 +14,8 @@ apt update && apt -y install neovim
 ```
 git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
 ~/.vim/setup.sh
+
+source ~/.vim/.bashrc
 ```
 
 ## Requirement
