@@ -35,3 +35,7 @@ if [[ -f $HOME/.bash_profile ]] && ! grep -wq .vim/.bashrc $HOME/.bash_profile; 
 fi
 
 rm -f /usr/bin/vimdiff.nvim
+
+## Install Plugins
+. $HOME/.vim/.bashrc
+vim +PlugInstall +qall
