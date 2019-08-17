@@ -158,6 +158,7 @@ fun! VimPlug()
         Plug 'ConradIrwin/vim-bracketed-paste'
         Plug 'plasticboy/vim-markdown'
         Plug 'vim-airline/vim-airline'
+        Plug 'stephpy/vim-yaml'
     call plug#end()
     "deoplete plugin
     let g:deoplete#enable_at_startup = 1
@@ -165,8 +166,13 @@ fun! VimPlug()
 endfun
 silent! call VimPlug()
 
+"deoplete settings
 "select first menu item
 "set completeopt+=menuone,noinsert
+
+"vim-go settings
+let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
 
 "Open/Close NERDTree
 nmap <F7> :NERDTreeToggle<CR>
