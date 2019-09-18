@@ -137,6 +137,7 @@ endif
 
 "FileType
 autocmd FileType go setlocal noexpandtab
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "Use bash syntax highlight
@@ -157,7 +158,6 @@ fun! VimPlug()
         Plug 'ConradIrwin/vim-bracketed-paste'
         Plug 'plasticboy/vim-markdown'
         Plug 'vim-airline/vim-airline'
-        Plug 'stephpy/vim-yaml'
     call plug#end()
     "deoplete plugin
     let g:deoplete#enable_at_startup = 1
@@ -168,10 +168,6 @@ silent! call VimPlug()
 "deoplete settings
 "select first menu item
 "set completeopt+=menuone,noinsert
-
-"vim-go settings
-let g:go_def_mode = 'gopls'
-let g:go_info_mode = 'gopls'
 
 "Open/Close NERDTree
 nmap <F7> :NERDTreeToggle<CR>
