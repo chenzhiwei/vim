@@ -9,6 +9,13 @@ add-apt-repository ppa:neovim-ppa/stable
 apt update && apt -y install neovim
 ```
 
+## Requirement
+
+```
+apt install -y gcc python3-pip python3-wheel python3-setuptools --no-install-recommends
+pip3 install --upgrade pynvim
+```
+
 ## Setup
 
 ```
@@ -16,13 +23,6 @@ git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
 ~/.vim/setup.sh
 
 source ~/.vim/.bashrc
-```
-
-## Requirement
-
-```
-apt install -y python3-pip python3-wheel python3-setuptools --no-install-recommends
-pip3 install --upgrade pynvim
 ```
 
 ## Commands
