@@ -58,10 +58,19 @@ Following will generate a `myVim.log` with debug level 9.
 vim -V9myVim.log filename
 ```
 
+## .vimrc only
+
+If you only want to use `.vimrc`, run one of the following commands:
+
+```
+wget -O ~/.vimrc https://github.com/chenzhiwei/vim/raw/master/.vimrc.real
+
+curl -L -o ~/.vimrc https://github.com/chenzhiwei/vim/raw/master/.vimrc.real
+```
+
 ## More
 
 在 bash 里用 vim 打开一些文件时这些文件名不能被自动补全，比如`.a`和`.o`文件。
-
 
 ```
 $ ls
