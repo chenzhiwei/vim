@@ -25,6 +25,13 @@ git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
 source ~/.vim/.bashrc
 ```
 
+* On Debian systems:
+
+    ```
+    sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 50
+    sudo update-alternatives --install /usr/bin/vimdiff vimdiff /usr/bin/nvim 50
+    ```
+
 ## Commands
 
 * Ctr + o Jump to previous visited locations
