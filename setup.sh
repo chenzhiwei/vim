@@ -14,6 +14,13 @@ mkdir -p ~/.config/nvim
 cd ~/.config/nvim
 ln -sf ../../.vim/vimrc init.vim
 
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 50
+sudo update-alternatives --install /usr/bin/view view /usr/bin/nvim 50
+sudo update-alternatives --install /usr/bin/vimdiff vimdiff /usr/bin/nvim 50
+
+## Do not run following commands
+exit
+
 ## Setup nvim to vim
 NVIM=$(which nvim)
 if [[ "$NVIM" == "" ]]; then
@@ -33,8 +40,6 @@ fi
 if [[ -f $HOME/.bash_profile ]] && ! grep -wq .vim/.bashrc $HOME/.bash_profile; then
     echo '. $HOME/.vim/.bashrc' >> $HOME/.bash_profile
 fi
-
-rm -f /usr/bin/vimdiff.nvim
 
 ## Install Plugins
 . $HOME/.vim/.bashrc

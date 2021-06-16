@@ -2,12 +2,8 @@
 
 ## Install NeoVIM
 
-```
-brew install neovim
+Download and install to `/usr` directory: https://github.com/neovim/neovim/releases/
 
-add-apt-repository ppa:neovim-ppa/stable
-apt update && apt -y install neovim
-```
 
 ## Requirement
 
@@ -16,19 +12,19 @@ apt install -y gcc python3-pip python3-wheel python3-setuptools --no-install-rec
 pip3 install --upgrade pynvim
 ```
 
+
 ## Setup
 
 ```
 git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
 ~/.vim/setup.sh
-
-source ~/.vim/.bashrc
 ```
 
 * On Debian systems:
 
     ```
     sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 50
+    sudo update-alternatives --install /usr/bin/view view /usr/bin/nvim 50
     sudo update-alternatives --install /usr/bin/vimdiff vimdiff /usr/bin/nvim 50
     ```
 
