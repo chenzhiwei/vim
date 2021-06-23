@@ -1,32 +1,12 @@
 # The Vim Configuration
 
-## Install NeoVIM
-
-Download and install to `/usr` directory: https://github.com/neovim/neovim/releases/
-
-
-## Requirement
-
-```
-apt install -y gcc python3-pip python3-wheel python3-setuptools --no-install-recommends
-pip3 install --upgrade pynvim
-```
-
-
 ## Setup
 
 ```
 git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
-~/.vim/setup.sh
+
+cd ~ && ln -sf .vim/vimrc .vimrc
 ```
-
-* On Debian systems:
-
-    ```
-    sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 50
-    sudo update-alternatives --install /usr/bin/view view /usr/bin/nvim 50
-    sudo update-alternatives --install /usr/bin/vimdiff vimdiff /usr/bin/nvim 50
-    ```
 
 ## Commands
 

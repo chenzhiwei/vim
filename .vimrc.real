@@ -146,26 +146,16 @@ let g:is_bash = 1
 "vim-plug setting
 fun! VimPlug()
     call plug#begin('~/.vim/.bundle')
-        if has('nvim')
-          Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-        else
-          Plug 'Shougo/deoplete.nvim'
-          Plug 'roxma/nvim-yarp'
-          Plug 'roxma/vim-hug-neovim-rpc'
-        endif
+        Plug 'maralla/completor.vim'
         Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
         Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoUpdateBinaries'}
         Plug 'ConradIrwin/vim-bracketed-paste'
         Plug 'plasticboy/vim-markdown'
         Plug 'vim-airline/vim-airline'
     call plug#end()
-    "deoplete plugin
-    let g:deoplete#enable_at_startup = 1
-    call deoplete#custom#option('on_insert_enter', v:false)
 endfun
 silent! call VimPlug()
 
-"deoplete settings
 "select first menu item
 "set completeopt+=menuone,noinsert
 
