@@ -146,6 +146,7 @@ let g:is_bash = 1
 "vim-plug setting
 fun! VimPlug()
     call plug#begin('~/.vim/.bundle')
+        Plug 'neoclide/jsonc.vim'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
         Plug 'fatih/vim-go', {'tag': '*'}
