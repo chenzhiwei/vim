@@ -150,7 +150,6 @@ fun! VimPlug()
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
         Plug 'fatih/vim-go', {'tag': '*'}
-        Plug 'ConradIrwin/vim-bracketed-paste'
         Plug 'plasticboy/vim-markdown'
         Plug 'vim-airline/vim-airline'
     call plug#end()
