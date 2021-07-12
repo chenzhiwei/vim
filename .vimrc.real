@@ -112,6 +112,11 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
 
+"Set swap, backup, undo file directories
+set directory=~/.vim/swap
+set backupdir=~/.vim/backup
+set undodir=~/.vim/undo
+
 "when pasting from system clipboard, F2 to toggle paste mode
 set pastetoggle=<F2>
 
