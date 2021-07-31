@@ -1,10 +1,24 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "jsonc",
+    "yaml",
+    "go"
+  ],
   "languageserver": {
     "go": {
       "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
-      "filetypes": ["go"]
+      "rootPatterns": [
+        "go.mod",
+        ".git"
+      ],
+      "trace.server": "off",
+      "filetypes": [
+        "go"
+      ]
     }
   }
 }

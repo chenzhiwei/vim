@@ -1,6 +1,15 @@
 "Get out of VI's compatible mode
 set nocompatible
 
+"Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,gbk,chinese,cp936,gb18030,utf-16le,utf-16,big5,euc-jp,euc-kr,latin-1
+set ambiwidth=single
+
+"Update time
+set updatetime=300
+
 "I like using light background terminal
 set background=light
 
@@ -23,7 +32,7 @@ syntax enable
 set ruler
 
 "Show line number and wrap line
-set nu
+set number
 set wrap
 
 "Set backspace
@@ -49,20 +58,6 @@ set softtabstop=4
 set smarttab
 set lbr
 
-"Auto/Smart/C-style indent
-set ai
-set si
-set cindent
-
-"Chinese support
-set encoding=utf-8
-set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set ambiwidth=single
-
-"Highlight search things
-set hlsearch
-set incsearch
-
 "Auto-complete filename as in bash
 set wildmode=list:longest,full
 
@@ -72,8 +67,9 @@ set wildmode=list:longest,full
 "Highlight trailing spaces/tabs
 match ErrorMsg '\s\+$'
 
-"Highligh trailing spaces/tabs in c language files
-let c_space_errors=1
+"Highlight search things
+set hlsearch
+set incsearch
 
 "Highlight settings in Visual select and Diff mode
 highlight Search ctermfg=DarkBlue
@@ -113,12 +109,9 @@ inoremap <C-f> <Right>
 inoremap <C-d> <Del>
 
 "Set swap, backup, undo file directories
-set directory=~/.vim/swap
-set backupdir=~/.vim/backup
-set undodir=~/.vim/undo
-
-"when pasting from system clipboard, F2 to toggle paste mode
-set pastetoggle=<F2>
+set directory=~/.vim/.hidden/swap
+set backupdir=~/.vim/.hidden/backup
+set undodir=~/.vim/.hidden/undo
 
 "autocmd settings
 if !exists("autocommands_loaded")
@@ -135,38 +128,37 @@ if !exists("autocommands_loaded")
         call cursor(l, c)
     endfun
     autocmd BufWritePre * call StripTrailingWhitespace()
-    autocmd BufNewFile,BufRead *.{css,htm,html,js,json,rb,xml,yaml,yml} set sw=2 ts=2 sts=2
-    " autocmd BufNewFile,BufRead *.json if !exists("filetype")|set ft=javascript|endif
-    " autocmd BufWinLeave *.sh :![ -x % ] || chmod +x %
 endif
 
 "FileType
 autocmd FileType go setlocal noexpandtab
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-"Use bash syntax highlight
-let g:is_bash = 1
+autocmd FileType html,javascript,css,json,jsonc,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "vim-plug setting
 fun! VimPlug()
     call plug#begin('~/.vim/.bundle')
-        Plug 'neoclide/jsonc.vim'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        Plug 'neoclide/jsonc.vim'
         Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-        Plug 'fatih/vim-go', {'tag': '*'}
         Plug 'plasticboy/vim-markdown'
         Plug 'vim-airline/vim-airline'
     call plug#end()
 endfun
 silent! call VimPlug()
 
-
-"Open/Close NERDTree
-nmap <F7> :NERDTreeToggle<CR>
+"nerdtree plugin
+nmap <F8> :NERDTreeToggle<CR>
 
 "vim-markdown plugin
 let g:vim_markdown_folding_disabled = 1
 
-"coc.nvim
-let g:coc_global_extensions = ['coc-tabnine', 'coc-yaml']
+"coc.nvim plugin
+autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
+set tagfunc=CocTagFunc
+let g:coc_global_extensions = [
+    \'coc-json',
+    \'coc-yaml',
+    \'coc-pyright',
+    \'coc-snippets',
+    \'coc-tabnine'
+    \]
