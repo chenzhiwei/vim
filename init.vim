@@ -1,5 +1,10 @@
-"Get out of VI's compatible mode
-set nocompatible
+"Encoding
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,gbk,chinese,cp936,gb18030,utf-16le,utf-16,big5,euc-jp,euc-kr,latin-1
+set ambiwidth=single
+
+set updatetime=300
 
 "I like using light background terminal
 set background=light
@@ -14,10 +19,6 @@ filetype indent on
 
 "Set to auto read when a file is changed from the outside
 set autoread
-
-"Enable syntax hl
-syntax on
-syntax enable
 
 "Always show current position
 set ruler
@@ -49,16 +50,6 @@ set softtabstop=4
 set smarttab
 set lbr
 
-"Auto/Smart/C-style indent
-set ai
-set si
-set cindent
-
-"Chinese support
-set encoding=utf-8
-set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set ambiwidth=single
-
 "Highlight search things
 set hlsearch
 set incsearch
@@ -66,14 +57,8 @@ set incsearch
 "Auto-complete filename as in bash
 set wildmode=list:longest,full
 
-"Set the comment line DarkBlue
-"highlight Comment ctermfg=DarkBlue
-
 "Highlight trailing spaces/tabs
 match ErrorMsg '\s\+$'
-
-"Highligh trailing spaces/tabs in c language files
-let c_space_errors=1
 
 "Highlight settings in Visual select and Diff mode
 highlight Search ctermfg=DarkBlue
@@ -88,7 +73,6 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 map q <Nop>
 
 "When highlight words, don't jump to next
-"nnoremap * *`` # This will cause screen flicker
 nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 "Map :Q to :q, :W to :w
@@ -112,14 +96,6 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
 
-"Set swap, backup, undo file directories
-set directory=~/.vim/swap
-set backupdir=~/.vim/backup
-set undodir=~/.vim/undo
-
-"when pasting from system clipboard, F2 to toggle paste mode
-set pastetoggle=<F2>
-
 "autocmd settings
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
@@ -135,38 +111,37 @@ if !exists("autocommands_loaded")
         call cursor(l, c)
     endfun
     autocmd BufWritePre * call StripTrailingWhitespace()
-    autocmd BufNewFile,BufRead *.{css,htm,html,js,json,rb,xml,yaml,yml} set sw=2 ts=2 sts=2
-    " autocmd BufNewFile,BufRead *.json if !exists("filetype")|set ft=javascript|endif
-    " autocmd BufWinLeave *.sh :![ -x % ] || chmod +x %
 endif
 
-"FileType
+"Text options filetype
 autocmd FileType go setlocal noexpandtab
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-"Use bash syntax highlight
-let g:is_bash = 1
+autocmd FileType html,javascript,css,json,jsonc,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "vim-plug setting
 fun! VimPlug()
-    call plug#begin('~/.vim/.bundle')
-        Plug 'neoclide/jsonc.vim'
+    call plug#begin('~/.config/nvim/.bundle')
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        Plug 'neoclide/jsonc.vim'
         Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-        Plug 'fatih/vim-go', {'tag': '*'}
         Plug 'plasticboy/vim-markdown'
         Plug 'vim-airline/vim-airline'
     call plug#end()
 endfun
 silent! call VimPlug()
 
-
 "Open/Close NERDTree
-nmap <F7> :NERDTreeToggle<CR>
+nmap <F8> :NERDTreeToggle<CR>
 
 "vim-markdown plugin
 let g:vim_markdown_folding_disabled = 1
 
-"coc.nvim
-let g:coc_global_extensions = ['coc-tabnine', 'coc-yaml']
+"coc settings
+autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
+set tagfunc=CocTagFunc
+let g:coc_global_extensions = [
+    \'coc-json',
+    \'coc-yaml',
+    \'coc-pyright',
+    \'coc-snippets',
+    \'coc-tabnine'
+    \]
