@@ -5,7 +5,6 @@ set nocompatible
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,gbk,chinese,cp936,gb18030,utf-16le,utf-16,big5,euc-jp,euc-kr,latin-1
-set ambiwidth=single
 
 "Update time
 set updatetime=300
@@ -16,11 +15,6 @@ set background=light
 "Sets how many lines of history VIM has to remember
 set history=1000
 
-"Enable filetype plugin
-filetype on
-filetype plugin on
-filetype indent on
-
 "Set to auto read when a file is changed from the outside
 set autoread
 
@@ -30,10 +24,6 @@ set hidden
 "No fold
 set nofoldenable
 
-"Enable syntax hl
-syntax on
-syntax enable
-
 "Always show current position
 set ruler
 
@@ -41,20 +31,12 @@ set ruler
 set number
 set wrap
 
-"Set backspace
-set backspace=eol,start,indent
-
 "Backspace and cursor keys wrap to
+set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
-"Set magic on
-set magic
 
 "show matching bracets
 set showmatch
-
-"How many tenths of a second to blink
-set mat=4
 
 "Text options
 set expandtab
@@ -62,16 +44,10 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set smarttab
-set lbr
+set linebreak
 
-"Auto-complete filename as in bash
+"Auto-complete filename command mode
 set wildmode=list:longest,full
-
-"Set the comment line DarkBlue
-"highlight Comment ctermfg=DarkBlue
-
-"Highlight trailing spaces/tabs
-match ErrorMsg '\s\+$'
 
 "Highlight search things
 set hlsearch
@@ -79,6 +55,15 @@ set incsearch
 
 "noswapfile
 setlocal noswapfile
+
+"Enable filetype
+filetype plugin indent on
+
+"Enable syntax hl
+syntax enable
+
+"Highlight trailing spaces/tabs
+match ErrorMsg '\s\+$'
 
 "Highlight settings in Visual select and Diff mode
 highlight Search ctermfg=DarkBlue
@@ -93,8 +78,8 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 map q <Nop>
 
 "When highlight words, don't jump to next
-"nnoremap * *`` # This will cause screen flicker
 nnoremap * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+nnoremap <silent> <C-l> :nohls<CR><C-l>
 
 "Map :Q to :q, :W to :w
 cnoreabbrev Q <C-r>=(getcmdtype()==':'? 'q!' : 'Q')<CR>
