@@ -24,6 +24,12 @@ filetype indent on
 "Set to auto read when a file is changed from the outside
 set autoread
 
+"Keep buffer during switch files
+set hidden
+
+"No fold
+set nofoldenable
+
 "Enable syntax hl
 syntax on
 syntax enable
@@ -71,6 +77,9 @@ match ErrorMsg '\s\+$'
 set hlsearch
 set incsearch
 
+"noswapfile
+setlocal noswapfile
+
 "Highlight settings in Visual select and Diff mode
 highlight Search ctermfg=DarkBlue
 highlight Visual ctermfg=White ctermbg=LightBlue
@@ -108,11 +117,6 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
 
-"Set swap, backup, undo file directories
-set directory=~/.vim/.hidden/swap
-set backupdir=~/.vim/.hidden/backup
-set undodir=~/.vim/.hidden/undo
-
 "autocmd settings
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
@@ -148,9 +152,6 @@ silent! call VimPlug()
 
 "nerdtree plugin
 nmap <F8> :NERDTreeToggle<CR>
-
-"vim-markdown plugin
-let g:vim_markdown_folding_disabled = 1
 
 "coc.nvim plugin
 autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
