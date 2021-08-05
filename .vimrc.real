@@ -53,8 +53,11 @@ set wildmode=list:longest,full
 set hlsearch
 set incsearch
 
+"swapfile dir
+set directory=/tmp
+
 "noswapfile
-setlocal noswapfile
+"setlocal noswapfile
 
 "Enable filetype
 filetype plugin indent on
@@ -125,7 +128,7 @@ autocmd FileType html,javascript,css,json,jsonc,yaml setlocal shiftwidth=2 tabst
 
 "vim-plug setting
 fun! VimPlug()
-    call plug#begin('~/.vim/.bundle')
+    call plug#begin('~/.vim/bundle')
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'neoclide/jsonc.vim'
         Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}

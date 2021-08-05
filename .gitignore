@@ -1,5 +1,6 @@
-/.bundle
 /.netrwhist
 *.swn
 *.swo
 *.swp
+/bundle/*
+!/bundle/vim-plug
