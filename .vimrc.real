@@ -53,6 +53,9 @@ set wildmode=list:longest,full
 set hlsearch
 set incsearch
 
+"viminfo file
+set viminfo+=n~/.vim/.viminfo
+
 "swapfile dir
 set directory=/tmp
 
