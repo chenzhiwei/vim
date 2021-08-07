@@ -52,7 +52,7 @@ git clone https://github.com/vim/vim.git
 cd vim
 
 ./configure --prefix=/usr/local/vim --enable-python3interp=yes --with-features=huge
-make
+make VIMRUNTIMEDIR=/usr/local/vim/share/vim/vim82
 make install
 /usr/local/vim/bin/vim --version
 ```
