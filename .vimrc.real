@@ -57,7 +57,7 @@ set incsearch
 "set viminfo+=n~/.vim/.viminfo
 
 "swapfile dir
-set directory=/tmp
+set directory=/tmp//
 
 "noswapfile
 "setlocal noswapfile
