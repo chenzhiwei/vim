@@ -3,11 +3,11 @@
 ## Setup
 
 ```
-git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
-
-cd ~ && ln -sf .vim/vimrc .vimrc
+rm -f ~/.vimrc
 
 go install golang.org/x/tools/gopls@latest
+
+git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
 ```
 
 ## Commands
@@ -28,7 +28,6 @@ go install golang.org/x/tools/gopls@latest
 
 ```
 :PlugInstall
-:GoInstallBinaries
 ```
 
 ## Settings
