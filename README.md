@@ -1,5 +1,15 @@
 # The Vim Configuration
 
+## Install Node
+
+This vim configuration depends on node, so you need to install it first.
+
+```
+VERSION=$(curl -s https://nodejs.org/dist/index.tab | awk '/Fermium/{print $1}' | tail -n1)
+curl -LO https://nodejs.org/dist/$VERSION/node-$VERSION-linux-x64.tar.xz
+tar xf node-$VERSION-linux-x64.tar.xz
+```
+
 ## Setup
 
 ```
@@ -7,7 +17,9 @@ rm -f ~/.vimrc
 
 go install golang.org/x/tools/gopls@latest
 
-git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
+git clone https://github.com/chenzhiwei/vim ~/.vim
+
+vim +PlugInstall
 ```
 
 ## Commands
@@ -23,12 +35,6 @@ git clone --recurse-submodules https://github.com/chenzhiwei/vim ~/.vim
 * `:tn` switch to next defination/declaration.
 * `:tp` switch to previous defination/declaration.
 * `g]` switch between multiple tags.
-
-## Extra vim commands
-
-```
-:PlugInstall
-```
 
 ## Settings
 
