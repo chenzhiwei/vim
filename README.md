@@ -19,7 +19,7 @@ go install golang.org/x/tools/gopls@latest
 
 git clone https://github.com/chenzhiwei/vim ~/.vim
 
-vim +PlugInstall
+vim +PlugInstall +qall
 ```
 
 ## Commands
