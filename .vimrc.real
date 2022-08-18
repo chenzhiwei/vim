@@ -133,7 +133,6 @@ autocmd FileType html,javascript,css,json,jsonc,yaml setlocal shiftwidth=2 tabst
 fun! VimPlug()
     call plug#begin('~/.vim/bundle')
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        Plug 'neoclide/jsonc.vim'
         Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
         Plug 'plasticboy/vim-markdown'
         Plug 'vim-airline/vim-airline'

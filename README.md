@@ -5,7 +5,7 @@
 This vim configuration depends on node, so you need to install it first.
 
 ```
-VERSION=$(curl -s https://nodejs.org/dist/index.tab | awk '/Fermium/{print $1}' | tail -n1)
+VERSION=$(curl -sL https://nodejs.org/dist/index.tab | awk 'NR==2 {print $1}')
 curl -LO https://nodejs.org/dist/$VERSION/node-$VERSION-linux-x64.tar.xz
 tar xf node-$VERSION-linux-x64.tar.xz
 ```
