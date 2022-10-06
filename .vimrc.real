@@ -144,6 +144,8 @@ silent! call VimPlug()
 nmap <F8> :NERDTreeToggle<CR>
 
 "coc.nvim plugin
+highlight CocFloating ctermbg=235 guibg=#13354A
+highlight CocMenuSel ctermbg=237 guibg=#13354A
 autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
