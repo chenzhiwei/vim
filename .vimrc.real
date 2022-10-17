@@ -108,6 +108,8 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
 
+noremap <Leader>W :w !sudo tee % > /dev/null
+
 "autocmd settings
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
