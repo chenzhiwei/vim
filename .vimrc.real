@@ -107,6 +107,7 @@ inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Del>
+inoremap <C-c> <ESC>
 
 noremap <Leader>W :w !sudo tee % > /dev/null
 
