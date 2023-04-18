@@ -1,14 +1,6 @@
 {
   "suggest.noselect": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "html",
-    "javascript",
-    "json",
-    "jsonc",
-    "yaml",
-    "go"
-  ],
+  "coc.preferences.formatOnSave": true,
   "languageserver": {
     "go": {
       "command": "gopls",
