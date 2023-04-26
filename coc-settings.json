@@ -1,6 +1,7 @@
 {
   "suggest.noselect": true,
   "coc.preferences.formatOnSave": true,
+  "python.formatting.provider": "black",
   "languageserver": {
     "go": {
       "command": "gopls",
