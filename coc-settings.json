@@ -2,6 +2,8 @@
   "suggest.noselect": true,
   "coc.preferences.formatOnSave": true,
   "python.formatting.provider": "black",
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.functionReturnTypes": false,
   "languageserver": {
     "go": {
       "command": "gopls",
