@@ -136,8 +136,8 @@ autocmd FileType html,javascript,css,json,jsonc,yaml setlocal shiftwidth=2 tabst
 fun! VimPlug()
     call plug#begin('~/.vim/bundle')
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-        Plug 'plasticboy/vim-markdown'
+        Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
+        Plug 'preservim/vim-markdown'
         Plug 'vim-airline/vim-airline'
     call plug#end()
 endfun
@@ -149,7 +149,7 @@ nmap <F8> :NERDTreeToggle<CR>
 "coc.nvim plugin
 highlight CocFloating ctermbg=235 guibg=#13354A
 highlight CocMenuSel ctermbg=237 guibg=#13354A
-autocmd BufWritePre *.go silent :call CocAction('organizeImport')
+autocmd BufWritePre *.go :call CocAction('organizeImport')
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
