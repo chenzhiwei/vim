@@ -130,7 +130,7 @@ endif
 
 "FileType
 autocmd FileType go setlocal noexpandtab
-autocmd FileType html,javascript,css,json,jsonc,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,javascript,css,json,jsonc,lua,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "vim-plug setting
 fun! VimPlug()
