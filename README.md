@@ -1,5 +1,7 @@
 # The Vim Configuration
 
+**Deprecated**, please use https://github.com/chenzhiwei/mnde/tree/master/.config/vim
+
 ## Install Node
 
 This vim configuration depends on node, so you need to install it first.
